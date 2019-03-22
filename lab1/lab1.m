@@ -2,16 +2,16 @@ close all;
 clc;
 clear;
 
-exper = 1;
+exper = 3;
 
 % 1
 [x,fs] = audioread("handel.ogg");
 x = x';
 time = 1/fs*(1:length(x));
 if (exper == 1)
-    sound(x,fs);
+    %sound(x,fs);
 end
-audiowrite('output_file.flac', x, fs);
+%audiowrite('output_file.flac', x, fs);
 %sound(x,fs/2);
 %sound(x,fs*2);
 figure;
@@ -19,7 +19,6 @@ plot(time,x);
 xlabel("Time (s)");
 ylabel("Signal");
 
-close all;
 
 % 2 
 if ( exper ==  2 )   
@@ -78,7 +77,7 @@ if (exper == 3)
         x_clip = max(min(T,x),-T);
         figure;
         if (T == 0.5)
-            sound(x_clip,fs);
+            %sound(x_clip,fs);
         end 
         plot(time,x_clip);
         xlabel("Time (s)")
@@ -188,7 +187,8 @@ end
 if (exper == 8)
         clear;
         fs = 8192;
-        fc = 1200;
+        fc = 880;
+        %fc = 1200;
         time = 1/fs*(1:200);
         x = cos(2*pi*fc*time);
         %sound(x,fs);
