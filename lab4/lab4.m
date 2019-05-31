@@ -67,9 +67,7 @@ end
 
 if exper == 2
     data_bits = randi([0 1] , 1, 1000);
-    data_bits_dec = [1 0 0 0 1 0 1 1 0 1 0 1 1 0 0 0];
-        impulse_response = [ 1 1 1 1; 1 1 0 1];
-    decode =  convolutional_dec(data_bits_dec, impulse_response)
+    impulse_response = [ 1 1 1 1; 1 1 0 1];
 
     encoded_bits = convolutional_enc(data_bits, impulse_response);
     decoded_bits = convolutional_dec(encoded_bits, impulse_response);
